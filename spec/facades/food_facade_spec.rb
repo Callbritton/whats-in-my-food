@@ -4,7 +4,7 @@ RSpec.describe 'Food Facade' do
   it 'returns a objects for a given query', :vcr do
     food = 'potato'
 
-    results = FoodFacade.fetch_member_data(food)
+    results = FoodFacade.fetch_food_data(food)
 
     expect(results).to be_an(Array)
     expect(results.first).to be_a(Food)
