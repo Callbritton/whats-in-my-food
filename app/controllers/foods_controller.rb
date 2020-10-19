@@ -9,7 +9,7 @@ class FoodsController < ApplicationController
     response = conn.get("/fdc/v1/foods/search?query=#{search}")
 
     parsed = JSON.parse(response.body, symbolize_names: true)
-    @foods = fetch_food_data(parsed)
+    @foods = fetch_food_data(parsed).first(10)
 
   end
 
