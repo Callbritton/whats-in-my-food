@@ -14,9 +14,9 @@ feature "user can search for specific food" do
     expect(page).to have_content("Results: 10")
 
     code = "070560951975"
-    description="SWEET POTATOES"
+    description= "SWEET POTATOES"
     brand = "The Pictsweet Company"
-    ingredients="SWEET POTATOES."
+    ingredients= "SWEET POTATOES."
 
     within("#food-info-600987") do
       expect(page).to have_content(code)
