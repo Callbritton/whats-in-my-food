@@ -6,9 +6,10 @@ feature "user can search for specific food" do
     visit '/'
 
     fill_in :q, with: 'sweet potatoes'
+    
     click_on "Search"
 
-    expect(current_path).to eq(search_path)
+    expect(current_path).to eq(foods_path)
 
     expect(page).to have_content("10 Results")
 
