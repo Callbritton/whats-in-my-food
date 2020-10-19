@@ -10,7 +10,7 @@ class FoodsController < ApplicationController
 
     parsed = JSON.parse(response.body, symbolize_names: true)
     @foods = fetch_food_data(parsed)
-    require "pry"; binding.pry
+
   end
 
   def fetch_food_data(parsed)
