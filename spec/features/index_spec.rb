@@ -6,18 +6,23 @@ feature "user can search for specific food" do
     visit '/'
 
     fill_in :q, with: 'sweet potatoes'
-    
+
     click_on "Search"
 
     expect(current_path).to eq(foods_path)
 
-    expect(page).to have_content("10 Results")
+    expect(page).to have_content("Results: 10")
 
-    expect(page).to have_css(".food", count: 10)
+    code = "070560951975"
+    description="SWEET POTATOES"
+    brand = "The Pictsweet Company"
+    ingredients="SWEET POTATOES."
 
-    # within(first(".food")) do
-    #   expect(page).to have_content("Description")
-    #   expect(page).to have_content("Ingredients")
-    # end
+    within("#food-info-600987") do
+      expect(page).to have_content(code)
+      expect(page).to have_content(description)
+      expect(page).to have_content(brand)
+      expect(page).to have_content(ingredients)
+    end
   end
 end

@@ -1,1 +1,11 @@
 <h1>Total Results: <%= @foods.count %></h1>
+<% @foods.each do |food| %>
+<section id='food-info-<%= food.id %>'>
+  <h2><%= food.description %></h2>
+  <h3>GTIN/UPC Code:</h3>
+  <p><%= food.code %></p>
+  <h3>Brand:</h3>
+  <p><%= food.brand %></p>
+  <h3>Ingredients:</h3>
+  <p><%= food.ingredients %></p>
+<% end %>
